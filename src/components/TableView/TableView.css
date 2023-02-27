@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+td,
+th {
+    padding: 15px;
+}
+
+td {
+    background-color: #efefef;
+}
+
+button {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    padding: 0.5em;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #efefef;
+}
