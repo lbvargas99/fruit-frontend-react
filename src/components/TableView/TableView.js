@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TableView.css";
 
 function meuEvento() {
@@ -42,7 +43,7 @@ function TableView() {
             <td>{fruta.valorA}</td>
             <td>{fruta.valorB}</td>
             <td>
-              <button onClick={meuEvento}>Selecionar</button>
+              <Link to="/fruit"><button>Selecionar</button></Link>
             </td>
           </tr>
         ))}
