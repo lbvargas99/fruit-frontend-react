@@ -1,7 +1,34 @@
 import "./TableView.css";
+
+function meuEvento() {
+  alert("opa");
+}
+
 function TableView() {
+  const frutas = [
+    {
+      description: "banana",
+      valorA: 10,
+      valorB: 2,
+    },
+    {
+      description: "maça",
+      valorA: 100,
+      valorB: 20,
+    },
+    {
+      description: "Laranja",
+      valorA: 15,
+      valorB: 5,
+    },
+    {
+      description: "Bergamota",
+      valorA: 5,
+      valorB: 1,
+    },
+  ];
   return (
-    <div class="container">
+    <div className="container">
       <table>
         <tr>
           <th>Descrição</th>
@@ -9,22 +36,16 @@ function TableView() {
           <th>B</th>
           <th>Ação</th>
         </tr>
-        <tr>
-          <td>Banana</td>
-          <td>10</td>
-          <td>2</td>
-          <td>
-            <button>Selecionar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Maçã</td>
-          <td>0</td>
-          <td>5</td>
-          <td>
-            <button>Selecionar</button>
-          </td>
-        </tr>
+        {frutas.map((fruta) => (
+          <tr>
+            <td>{fruta.description}</td>
+            <td>{fruta.valorA}</td>
+            <td>{fruta.valorB}</td>
+            <td>
+              <button onClick={meuEvento}>Selecionar</button>
+            </td>
+          </tr>
+        ))}
       </table>
     </div>
   );
