@@ -13,7 +13,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<IndexPage />} />
-            <Route path="/fruit" element={<ViewFruitPage />} />
+            <Route path="/fruit/:id" element={<ViewFruitPage />} />
           </Routes>
         </Router>
       </div>
