@@ -37,10 +37,7 @@ function ViewFruitPage() {
     <>
       <form className="form">
         <div>
-          <Link
-            to="/"
-            className="back_button"
-          >
+          <Link to="/" className="back_button">
             Voltar
           </Link>
         </div>
