@@ -1,52 +1,46 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "./TableView.css";
 
-function meuEvento() {
-  alert("opa");
-}
-
 function TableView() {
-  const frutas = [
-    {
-      description: "banana",
-      valorA: 10,
-      valorB: 2,
-    },
-    {
-      description: "maça",
-      valorA: 100,
-      valorB: 20,
-    },
-    {
-      description: "Laranja",
-      valorA: 15,
-      valorB: 5,
-    },
-    {
-      description: "Bergamota",
-      valorA: 5,
-      valorB: 1,
-    },
-  ];
+  const [frutas, setFrutas] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5027/api/fruit")
+      .then((response) => {
+        setFrutas(response.data.data);
+      })
+      .catch(() => {
+        console.log("Problema com a requisição!");
+      });
+  }, []);
   return (
     <div className="container">
       <table>
-        <tr>
-          <th>Descrição</th>
-          <th>A</th>
-          <th>B</th>
-          <th>Ação</th>
-        </tr>
-        {frutas.map((fruta) => (
+        <thead>
           <tr>
-            <td>{fruta.description}</td>
-            <td>{fruta.valorA}</td>
-            <td>{fruta.valorB}</td>
-            <td>
-              <Link to="/fruit"><button>Selecionar</button></Link>
-            </td>
+            <th>Descrição</th>
+            <th>A</th>
+            <th>B</th>
+            <th>Ação</th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {frutas.map((fruta) => (
+            <tr key={fruta.id}>
+              <td>{fruta.description}</td>
+              <td>{fruta.valueA}</td>
+              <td>{fruta.valueB}</td>
+              <td>
+                <Link to={"/fruit/" + fruta.id}>
+                  <button>Selecionar</button>
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
