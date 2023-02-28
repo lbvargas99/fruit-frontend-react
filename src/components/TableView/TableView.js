@@ -35,7 +35,7 @@ function TableView() {
               <td>{fruta.valueB}</td>
               <td>
                 <Link to={"/fruit/" + fruta.id}>
-                  <button>Selecionar</button>
+                  <button className="select_button">Selecionar</button>
                 </Link>
               </td>
             </tr>

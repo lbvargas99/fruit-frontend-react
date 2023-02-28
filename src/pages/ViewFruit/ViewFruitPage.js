@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import "./ViewFruit.css";
 
 function ViewFruitPage() {
   const { id } = useParams();
@@ -35,31 +36,38 @@ function ViewFruitPage() {
   return (
     <>
       <form className="form">
-        <div className="field">
+        <div>
+          <Link
+            to="/"
+            className="back_button"
+          >
+            Voltar
+          </Link>
+        </div>
+        <div className="fields">
           <label>Descrição</label>
           <input placeholder={fruit.description} readOnly />
-        </div>
-        <div className="field">
+
           <label>Valor A</label>
           <input placeholder={fruit.valueA} readOnly />
-        </div>
-        <div className="field">
+
           <label>Valor B</label>
           <input placeholder={fruit.valueB} readOnly />
         </div>
-        <div className="form_buttons">
-          <button onClick={multiplicar}>Multiplicar</button>
-          <button onClick={dividir}>Dividir</button>
+        {resultOperation ? (
+          <p>Resultado: {resultOperation}</p>
+        ) : (
+          <p>Aguardando operação</p>
+        )}
+        <div>
+          <button className="form_button" onClick={multiplicar}>
+            Multiplicar
+          </button>
+          <button className="form_button" onClick={dividir}>
+            Dividir
+          </button>
         </div>
       </form>
-      {resultOperation ? (
-        <p>Resultado: {resultOperation}</p>
-      ) : (
-        <p>Aguardando operação</p>
-      )}
-      <Link to="/">
-        <button>Voltar</button>
-      </Link>
     </>
   );
 }

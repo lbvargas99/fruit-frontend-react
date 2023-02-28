@@ -1,0 +1,73 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 500px;
+    padding: 20px;
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+label {
+    margin: 20px 0 5px 0;
+}
+
+input {
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 60%;
+
+    border: 1px solid #efefef;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    cursor: default;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form_button {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    padding: 1em;
+    width: 26%;
+    margin: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.form_button:hover {
+    background-color: #fff;
+}
+
+.back_button {
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    padding: 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1b1e23;
+    display: flex;
+    justify-content: center;
+}
+
+.back_button:hover {
+    background-color: #efefef;
+}
